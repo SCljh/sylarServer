@@ -8,6 +8,7 @@
 #include <string>
 #include <stdint.h>
 #include <memory>
+#include <list>
 
 namespace sylar {
 
@@ -68,10 +69,22 @@ public:
 
     Logger(const std::string& name = "root") {};
     void log(LogLevel::Level level, const LogEvent::ptr event);
+
+    void debug(LogEvent::ptr event);
+    void info(LogEvent::ptr event);
+    void warn(LogEvent::ptr event);
+    void error(LogEvent::ptr event);
+    void fatal(LogEvent::ptr event);
+
+    void addAppender(LogAppender::ptr appender);
+    void delAppender(LogAppender::ptr appender);
+    LogLevel::Level getLevel() const {return m_level;}
+    void setLevel(LogLevel::Level val) {m_level = val;}
 private:
-    std::string m_name;
-    LogAppender::ptr
-    LogLevel::Level m_level;        //定义日志器的日志级别
+    std::string m_name;                         //日志名称
+    std::list<LogAppender::ptr> m_appenders;    //输出到的appender集合
+    LogLevel::Level m_level;                    //定义日志器的日志级别，大于此级别的日志才被输出
+
 };
 
 //输出的控制台的appender
