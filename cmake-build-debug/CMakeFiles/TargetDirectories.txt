@@ -1,0 +1,3 @@
+/home/acmery/sylarServer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/acmery/sylarServer/cmake-build-debug/CMakeFiles/sylarServer.dir
+/home/acmery/sylarServer/cmake-build-debug/CMakeFiles/edit_cache.dir

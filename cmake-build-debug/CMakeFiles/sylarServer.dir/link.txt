@@ -1,0 +1,1 @@
+/usr/bin/g++  -g   CMakeFiles/sylarServer.dir/sylar/main.cpp.o CMakeFiles/sylarServer.dir/sylar/log.cpp.o  -o sylarServer 
